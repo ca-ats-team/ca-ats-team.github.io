@@ -58,14 +58,14 @@
   
   <script>
     // Load navbar and offcanvas components
-    fetch("ca-ats-team.github.io/components/_navbar.html")
+    fetch("https://raw.githubusercontent.com/ca-ats-team/ca-ats-team.github.io/refs/heads/main/components/_navbar.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("navbar-placeholder").innerHTML = data;
         console.log("***_navbar loaded");
         navbarInit();
       });
-    fetch("ca-ats-team.github.io/components/_offcanvas.html")
+    fetch("https://raw.githubusercontent.com/ca-ats-team/ca-ats-team.github.io/refs/heads/main/components/_offcanvas.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("offcanvas-placeholder").innerHTML = data;
