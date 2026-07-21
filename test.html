@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The filter() Method</h2>
+
+    <p>
+      Click "Test" to get every element in the array that has a value above this
+      number:
+    </p>
+
+    <p><input type="number" id="ageToCheck" value="30" /></p>
+    <button onclick="myFunction()">Test</button>
+
+    <p id="demo"></p>
+
+    <script>
+      const ages = [
+        { name: "John", age: 32 },
+        { name: "Larry", age: 33 },
+        { name: "Kim", age: 12 },
+        { name: "Martha", age: 40 },
+      ];
+
+      function checkAge(age) {
+        console.log("***!" + age);
+        return age > document.getElementById("ageToCheck").value;
+      }
+
+      function myFunction() {
+        const array = ages.filter(
+          (m) => m.age > document.getElementById("ageToCheck").value,
+        );
+        console.log(array.map((m) => m.name));
+      }
+    </script>
+  </body>
+</html>

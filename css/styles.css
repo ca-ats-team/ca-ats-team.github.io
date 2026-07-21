@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.card {
+  margin: 15px 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #343a40;
+  color: white;
+}
+
+.offcanvas {
+  background-color: #343a40;
+  color: white;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #495057;
+}
+
+.offcanvas-body {
+  padding: 15px;
+}
+
+.notemaker-form-txtarea {
+  height: 100px;
+}
+
+.choices__inner {
+  background: none;
+  border-radius: 5px;
+}
+
+.choices__placeholder {
+  color: var(--bs-secondary);
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.choices__list {
+  /* color: var(--bs-secondary); */
+  /* color: red !important; */
+  font-family: var(--bs-font-sans-serif) !important;
+  /* font-size: 1rem !important; */
+  /* font-weight: 400 !important; */
+}

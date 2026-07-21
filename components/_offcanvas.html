@@ -1,0 +1,435 @@
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="offcanvasNotemaker"
+  aria-labelledby="offcanvasNotemakerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasNotemakerLabel">ATS Notemaker</h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>
+      This is some placeholder content for the offcanvas component. You can put
+      any content here, such as links, additional navigation, or information.
+    </p>
+    <div class="offcanvas-body">
+      <ul class="nav nav-tabs" id="notemakerTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="online-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#online-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="online-tab-pane"
+            aria-selected="true">
+            Online
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="offline-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#offline-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="offline-tab-pane"
+            aria-selected="false">
+            Offline
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="chats-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#chats-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="chats-tab-pane"
+            aria-selected="false">
+            Chats
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="disabled-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#disabled-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="disabled-tab-pane"
+            aria-selected="false"
+            disabled>
+            Disabled
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content" id="notemakerTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="online-tab-pane"
+        role="tabpanel"
+        aria-labelledby="online-tab"
+        tabindex="0">
+        <!-- Online Form fields for the Notemaker tool -->
+        <form class="row gx-3 gy-2 align-items-center" id="nmOnlineForm">
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOnlineEmpName">
+              Employee Name
+            </label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="nmOnlineEmpName"
+                placeholder="Employee Name" />
+              <a
+                class="input-group-text link-secondary"
+                href="#"
+                onclick="nmSearch('nmOnlineEmpName')">
+                <span>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6">
+            <label class="visually-hidden" for="nmOnlineEmpId">
+              Employee Id
+            </label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="nmOnlineEmpId"
+                placeholder="Employee Id" />
+              <a
+                class="input-group-text link-secondary"
+                href="#"
+                onclick="nmSearch('nmOnlineEmpId')">
+                <span>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6">
+            <label class="visually-hidden" for="nmOnlineCbrNum">
+              Callback Number
+            </label>
+            <div class="input-group">
+              <div class="input-group-text bg-transparent">#</div>
+              <input
+                type="text"
+                class="form-control"
+                id="nmOnlineCbrNum"
+                placeholder="CBR" />
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOnlineTicketId">
+              Ticket # or BTN
+            </label>
+            <div class="input-group">
+              <div class="input-group-text bg-transparent">#</div>
+              <input
+                type="text"
+                class="form-control"
+                id="nmOnlineTicketId"
+                placeholder="Ticket/BTN" />
+              <a
+                class="input-group-text link-secondary"
+                href="#"
+                onclick="nmSearch('nmOnlineTicketId')">
+                <span>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOnlineDescription">
+              Description
+            </label>
+            <select
+              class="form-select"
+              id="nmOnlineDescription"
+              placeholder="Select Description..."></select>
+          </div>
+          <!-- Test -->
+          <div>
+            <button
+              type="button"
+              class="btn btn-secondary mt-2"
+              onclick="nmTest()">
+              Test
+            </button>
+          </div>
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOnlineActions">
+              Actions Taken
+            </label>
+            <textarea
+              type="text"
+              class="form-control notemaker-form-txtarea"
+              id="nmOnlineActions"
+              placeholder="Actions Taken"></textarea>
+          </div>
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOnlineResolution">
+              Resolution
+            </label>
+            <textarea
+              type="text"
+              class="form-control notemaker-form-txtarea"
+              id="nmOnlineResolution"
+              placeholder="Resolution"></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary mt-2"
+            onclick="nmSubmit('nmOnlineSubmit')"
+            id="nmOnlineSubmit">
+            Submit
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary mt-2"
+            onclick="copyToClipboard()">
+            Copy
+          </button>
+          <button
+            type="reset"
+            class="btn btn-secondary mt-2"
+            onclick="nmResetForms('nmOnline')">
+            Reset
+          </button>
+          <button
+            type="button"
+            class="btn btn-info mt-2"
+            data-bs-dismiss="offcanvas">
+            Close
+          </button>
+        </form>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="offline-tab-pane"
+        role="tabpanel"
+        aria-labelledby="offline-tab"
+        tabindex="0">
+        <!-- Offline Form fields for the Notemaker tool -->
+        <form class="row gx-3 gy-2 align-items-center" id="nmOfflineForm">
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOfflineTicketId">
+              Ticket or BTN #
+            </label>
+            <div class="input-group">
+              <div class="input-group-text bg-transparent">#</div>
+              <input
+                type="text"
+                class="form-control"
+                id="nmOfflineTicketId"
+                placeholder="Ticket/BTN" />
+              <a
+                class="input-group-text link-secondary"
+                href="#"
+                onclick="nmSearch('nmOfflineTicketId')">
+                <span>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12">
+            <select
+              class="form-select"
+              id="nmOfflineDescription"
+              placeholder="Select Description..."></select>
+          </div>
+          <!-- START DROPDOWN FORM -->
+          <div class="dropdown col-12 mb-2">
+            <button
+              type="button"
+              class="btn btn-outline-secondary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              data-bs-auto-close="outside"
+              id="nmformDDtoggle">
+              Actions Taken
+            </button>
+            <div class="dropdown-menu p-4">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="nmformswitchONT" />
+                <label class="form-check-label" for="nmformswitchONT">
+                  ONT is Up and In Service?
+                </label>
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="nmformswitchRG" />
+                <label class="form-check-label" for="nmformswitchRG">
+                  RG Up and In Service?
+                </label>
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="nmformswitchProv" />
+                <label class="form-check-label" for="nmformswitchProv">
+                  Corrected issues with Provisioning?
+                </label>
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="nmformswitchCmds" />
+                <label class="form-check-label" for="nmformswitchCmds">
+                  Performed any device/port commands?
+                </label>
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="nmformswitchSpoke" />
+                <label class="form-check-label" for="nmformswitchSpoke">
+                  Spoke with Customer?
+                </label>
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="nmformswitchIssueReso" />
+                <label class="form-check-label" for="nmformswitchIssueReso">
+                  Customer indicated issue(s) resolved?
+                </label>
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="nmformswitchDisp" />
+                <label class="form-check-label" for="nmformswitchDisp">
+                  Customer request a Dispatch?
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- END DROPDOWN FORM-->
+          <div class="col-12">
+            <div class="input-group">
+              <label class="visually-hidden" for="nmOfflineContactNum">
+                Contact Number
+              </label>
+              <div class="input-group-text bg-transparent">#</div>
+              <input
+                type="text"
+                class="form-control"
+                id="nmOfflineContactNum"
+                aria-label="Contact Number"
+                placeholder="Contact Number" />
+              <select
+                class="form-select text-secondary"
+                id="nmOfflineDDContactType"
+                aria-label="Contact Number Dropdown">
+                <option selected>Choose...</option>
+                <option value="1">Spoke With</option>
+                <option value="2">Left Voicemail</option>
+                <option value="3">Busy/RNA</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOfflineContactName">
+              Contact Name
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="nmOfflineContactName"
+              aria-label="Contact Name Text"
+              placeholder="Contact Name"
+              disabled />
+          </div>
+          <div class="col-12">
+            <label class="visually-hidden" for="nmOfflineResolution">
+              Resolution
+            </label>
+            <textarea
+              type="text"
+              class="form-control notemaker-form-txtarea"
+              id="nmOfflineResolution"
+              placeholder="Resolution"></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary mt-2"
+            onclick="nmSubmit('nmOfflineSubmit')"
+            id="nmOfflineSubmit">
+            Submit
+          </button>
+          <button
+            type="reset"
+            class="btn btn-secondary mt-2"
+            onclick="copyToClipboard()">
+            Copy
+          </button>
+          <button
+            type="reset"
+            class="btn btn-secondary mt-2"
+            onclick="nmResetForms('nmOffline')">
+            Reset
+          </button>
+          <button
+            type="button"
+            class="btn btn-info mt-2"
+            data-bs-dismiss="offcanvas">
+            Close
+          </button>
+        </form>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="chats-tab-pane"
+        role="tabpanel"
+        aria-labelledby="chats-tab"
+        tabindex="0">
+        <!-- Chats Form fields for the Notemaker tool -->
+        <p>Chats info goes here</p>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="disabled-tab-pane"
+        role="tabpanel"
+        aria-labelledby="disabled-tab"
+        tabindex="0">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
